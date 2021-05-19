@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 	<>
 		<Head>
 			{/* {/* Favicons */}
-			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+			<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
 			<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 			<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 			<link rel="manifest" href="/site.webmanifest" />
@@ -16,13 +16,7 @@ function MyApp({ Component, pageProps }) {
 			<meta name="theme-color" content="#ffffff" />
 			<meta name="lang" content="en" />
 			{/* facebook/Twiiter og site */}
-			<meta name="twitter:card" content="summary" />
-			<meta name="twitter:site" content="chat" />
-			<meta id="twitter-image" name="twitter:image" content="/favicon-32x32.png" />
-			<meta property="og:url" content="" />
-			<meta property="og:type" content="product" />
-			<meta property="og:site_name" content=""/>
-			<meta id="og-image" property="og:image" content="/favicon-32x32.png"/>
+			<title>Sequence</title>
 		</Head>
 		<Global
 			styles={css`

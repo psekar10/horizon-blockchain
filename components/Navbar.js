@@ -9,7 +9,7 @@ const Navbar = () => {
 			<NavbarContainer>
 				<NavbarWrapper>
 					<NavbarBrand>
-						<img src="/logo-block.png" height="32px" />
+						<img src="/images/logo-block.png" height="32px" />
 					</NavbarBrand>
 					<NavbarMenu>
 						<div>
@@ -26,8 +26,8 @@ const Navbar = () => {
 			</NavbarContainer>
 			<MobileNavbarContainer modalOpen={modalOpen}>
 				<MobileNavbarHeader>
-					{modalOpen ? <img src="/logo-block-mob.png" height="55px" /> : <img src="/logo-block.png" height="32px" />}
-					<a onClick={() => setModalOpen(!modalOpen)}>{modalOpen ? <img src="/hamburger-open.png" height="55px" /> : <img src="/hamburger-close.png" height="55px" />}</a>
+					{modalOpen ? <img src="/images/logo-block-mob.png" height="55px" /> : <img src="/images/logo-block.png" height="32px" />}
+					<a onClick={() => setModalOpen(!modalOpen)}>{modalOpen ? <img src="/images/hamburger-open.png" height="55px" /> : <img src="/images/hamburger-close.png" height="55px" />}</a>
 				</MobileNavbarHeader>
 				{modalOpen && (
 					<>
@@ -58,7 +58,7 @@ const NavbarContainer = styled.nav`
 	display: block;
 	min-height : 3.25rem;
 	position: relative;
-	margin-top: 48px;
+	margin: 48px 0;
 `;
 const NavbarWrapper = styled.div`
 	display: flex;
