@@ -33,9 +33,42 @@ function MyApp({ Component, pageProps }) {
 					font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
 						Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
 						sans-serif;
-					overflow: hidden;
+					background: #030303;
 				}
-
+				a {
+					color: #dedede;
+					font-size: 16px;
+					text-decoration: none;
+				}
+				p {
+					color: #999;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 145%;
+					font-size: 16px;
+					mix-blend-mode: normal;
+				}
+				h1, h2, h3, h4 {
+					font-family: Circular;
+					font-style: normal;
+					font-size: 26px;
+					line-height: 125%;
+					letter-spacing: -.02em;
+					color: #fff;
+				}
+				h2 {
+					background: linear-gradient(79.22deg,rgba(101,154,176,0) 32.91%,rgba(101,154,176,.75) 91.8%),linear-gradient(0deg,#fff,#fff);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+				label {
+					font-family: Inter;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 16px;
+					line-height: 140%;
+					color: #999;
+				}
 				* {
 					box-sizing: border-box;
 				}

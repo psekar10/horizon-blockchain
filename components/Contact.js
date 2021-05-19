@@ -6,7 +6,7 @@ const Contact = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
 	return (
-		<>
+		<div style={{margin: "8rem 0"}}>
 			<ContactHeader>
 				<h2>We're here to help</h2>
 				<p>Sequence helps you build the next generation of Internet economies and experiences. <a href="https://chat.sequence.build" target="_blank">Join our Discord</a> to chat with our team.<br />For additional support, reach out below.</p>
@@ -15,21 +15,21 @@ const Contact = () => {
 				<FormContainer>
 					<FieldBody>
 						<Label htmlFor="email">Your Email</Label>
-						<Input defaultValue="test" {...register("email")} />
+						<Input {...register("email")} />
 					</FieldBody>
 					<TwoRowField>
-						<FieldBody>
+						<FieldBody style={{marginRight:"16px"}}>
 							<Label htmlFor="fname">First Name</Label>
-							<Input defaultValue="test" {...register("fname")} />
+							<Input {...register("fname")} />
 						</FieldBody>
 						<FieldBody>
 							<Label htmlFor="lname">Last Name</Label>
-							<Input defaultValue="test" {...register("lname")} />
+							<Input {...register("lname")} />
 						</FieldBody>
 					</TwoRowField>
 					<FieldBody>
 						<Label htmlFor="website">Project Website</Label>
-						<Input defaultValue="test" {...register("website")} />
+						<Input {...register("website")} />
 					</FieldBody>
 					<FieldBody>
 						<Label htmlFor="about">Tell us about your project</Label>
@@ -40,7 +40,7 @@ const Contact = () => {
 				<ButtonWrapper type="submit">Submit</ButtonWrapper>
 			</Form>
 			<FootNote>We typically respond to inquiries within 48 hours<br />You can also email us directly at <a href="mailto:hello@sequence.build">hello@sequence.build</a></FootNote>
-		</>
+		</div>
 	)
 }
 
@@ -50,7 +50,7 @@ export default Contact;
 const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	justify-contents: center;
+	justify-content: center;
 	align-items: center;
 `;
 const FormContainer = styled.div`
@@ -58,40 +58,45 @@ const FormContainer = styled.div`
 	flex-direction: column;
 	max-width: 56rem;
 	width: 100%;
-	margin: 0 auto;
+	margin: 16px auto;
 	margin-bottom: 16px;
+	padding: 0 24px;
 `;
 const ContactHeader = styled.div`
-	max-width:42rem;
+	max-width:20rem;
 	margin: 0 auto;
-	margin-bottom: 64px;
 	text-align: center;
 	> h2 {
 		margin-bottom: 16px;
-		font-size: 40px;
 	}
-	> p {
-		font-size: 18px;
+	@media (min-width: 640px){
+		max-width:42rem;
+		> h2 {
+			font-size: 40px;
+		}
+		> p {
+			font-size: 18px;
+		}
 	}
 `;
 const TwoRowField = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex: 1 1 0%;
+	@media (min-width: 768px){
+		flex-direction: row;
+	}
 `;
 const FieldBody = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: 0 8px;
 	margin-bottom : 32px;
 	text-align: left;
 	width: 100%;
 `;
 const Label = styled.label`
-	font-weight: 500;
 	font-size: 15px;
-	line-height: 140%;
-	color: #999;
+	margin-bottom: 8px;
 `;
 const Input = styled.input`
 	border: 2px solid #2a2a2a;
@@ -103,6 +108,9 @@ const Input = styled.input`
 	padding: 0 20px;
 	font-size: 20px;
 	color: #fff;
+	:focus {
+		border: 2px solid #7a7a7a;
+	}
 `;
 const TextArea = styled.textarea`
 	border: 2px solid #2a2a2a;
@@ -117,11 +125,12 @@ const TextArea = styled.textarea`
 `;
 const ButtonWrapper = styled.button`
 	display: block;
+	border: none;
 	position: relative;
 	cursor: pointer;
 	min-width: 80px;
 	max-width: 250px;
-	padding: 10px 40px;
+	padding: 14px 40px;
 	text-align: center;
 	border-radius: 20px;
 	outline: 0!important;
