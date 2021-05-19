@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }) {
 					color: #dedede;
 					font-size: 16px;
 					text-decoration: none;
+					cursor: pointer;
 				}
 				p {
 					color: #999;
