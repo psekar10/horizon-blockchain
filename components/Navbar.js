@@ -1,7 +1,10 @@
 import {useState} from 'react';
 import styled from '@emotion/styled';
 
-
+/**
+ *  Navbar component
+ * @returns 
+ */
 const Navbar = () => {
 	const [modalOpen, setModalOpen] = useState(false);
 	return (
@@ -25,9 +28,9 @@ const Navbar = () => {
 				</NavbarWrapper>
 			</NavbarContainer>
 			<MobileNavbarContainer modalOpen={modalOpen}>
-				<MobileNavbarHeader>
-					{modalOpen ? <img src="/images/logo-block-mob.png" height="55px" /> : <img src="/images/logo-block.png" height="32px" />}
-					<a onClick={() => setModalOpen(!modalOpen)}>{modalOpen ? <img src="/images/hamburger-open.png" height="55px" /> : <img src="/images/hamburger-close.png" height="55px" />}</a>
+				<MobileNavbarHeader modalOpen={modalOpen}>
+					{modalOpen && <img src="/images/logo-block-mob.png" height="55px" />}
+					<a onClick={() => setModalOpen(!modalOpen)}>{modalOpen ? <img src="/images/hamburger-close.png" height="55px" /> : <img src="/images/hamburger-open.png" height="55px" />}</a>
 				</MobileNavbarHeader>
 				{modalOpen && (
 					<>
@@ -40,7 +43,7 @@ const Navbar = () => {
 						<LaunchButton>
 							<a>Launch Wallet</a>
 						</LaunchButton>
-						<p style={{margin:"16px 0", fontSize:"12px"}}>Copyright © 2021 Horizon Blockchain Games Inc.</p>
+						<p style={{margin:"16px 0", fontSize:"12px", marginTop: "64px"}}>Copyright © 2021 Horizon Blockchain Games Inc.</p>
 					</>
 				)}
 			</MobileNavbarContainer>
@@ -119,7 +122,7 @@ const MobileNavbarContainer = styled.nav`
 `;
 const MobileNavbarHeader = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: ${props => props.modalOpen ? "space-between" : "flex-end"};
 	align-items: center;
 `;
 const MobileNavbarMenu = styled.div`

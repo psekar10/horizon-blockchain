@@ -15,7 +15,6 @@ function MyApp({ Component, pageProps }) {
 			<meta name="msapplication-TileColor" content="#da532c" />
 			<meta name="theme-color" content="#ffffff" />
 			<meta name="lang" content="en" />
-			{/* facebook/Twiiter og site */}
 			<title>Sequence</title>
 		</Head>
 		<Global

@@ -1,67 +1,74 @@
 import {useState} from 'react';
 import styled from '@emotion/styled';
 
-const DeveloperSDK = () => {
-	return (
-		<DeveloperContainer>
-			<DeveloperWrapper>
-				<DeveloperHeader>
-					<h2>Our SDK + APIs make blockchain simple and user friendly</h2>
-					<p>And they give you everything you’ll need to run your application beautifully on the blockchain.</p>
-				</DeveloperHeader>
-				<GridContainer>
-					<GridWrapper>
-						<GridBoxComponent 
-							title="Smart Wallet built for a Multi-Chain World" 
-							hoverDescription="The Sequence Wallet empowers your users with a friendly and secure experience for all of Ethereum. Plus, you'll never get stuck: you and your users can easily move between chains to capitalize on the lowest gas fees and highest security." 
-							gridColumn="1/3" 
-						/>
-						<GridBoxComponent 
-							title="Web & Backend SDKs" 
-							hoverDescription="Powerful developer libraries and APIs that seamlessly integrate with Ethereum." 
-						/>
-						<GridBoxComponent 
-							title="Audited Smart Contract Library" 
-							hoverDescription="A standard library of audited smart contracts. Check out our Github." 
-						/>
-						<GridBoxComponent 
-							title="Enhanced Transactions" 
-							hoverDescription="Meta transaction support means users can batch transactions and pay for gas in the token of their choice. And, Sequence Meta transactions work with all existing contracts (without any changes required to your contracts)." 
-							gridRow="2/4"
-						/>
-						<GridBoxComponent 
-							title="Easy Minting, Transfer and Exchange of NFTs and Digital Items" 
-							hoverDescription="Our widely-adopted ERC-1155 smart contracts help you easily create digital collectibles. Plus, enhance your capabilities with our NFT APIs for querying metadata and balances." 
-							gridColumn="4"
-							gridRow="2/4"
-						/>
-						<GridBoxComponent 
-							title="Social / Email Login & Recovery for Wallets" 
-							hoverDescription="Easily sign in via Google, Facebook or other socials. No blockchain knowledge required." 
-						/>
-						<GridBoxComponent 
-							title="Niftyswap (NFT) Market Protocol" 
-							hoverDescription="Offer your users an ecommerce-like market experience for trading ERC-1155 tokens. Users will love instant liquidity with Niftyswap's AMM design! Build your own custom UI's — we've already built the backend for you." 
-							gridColumn="3" 
-							gridRow="2/4"
-						/>
-						<GridBoxComponent 
-							title="Friendly Payments" 
-							hoverDescription="Easy credit card on-ramps, and your users don’t need to own crypto to pay fees." 
-						/>
-					</GridWrapper>
-				</GridContainer>
-			</DeveloperWrapper>
-		</DeveloperContainer>
-	)
-}
+/**
+ * DeveloperSDK component
+ * 
+ */
+const DeveloperSDK = () => (
+	<DeveloperContainer>
+		<DeveloperWrapper>
+			<DeveloperHeader>
+				<h2>Our SDK + APIs make blockchain simple and user friendly</h2>
+				<p>And they give you everything you’ll need to run your application beautifully on the blockchain.</p>
+			</DeveloperHeader>
+			<GridContainer>
+				<GridWrapper>
+					<GridBoxComponent 
+						title="Smart Wallet built for a Multi-Chain World" 
+						hoverDescription="The Sequence Wallet empowers your users with a friendly and secure experience for all of Ethereum. Plus, you'll never get stuck: you and your users can easily move between chains to capitalize on the lowest gas fees and highest security." 
+						gridColumn="1/3" 
+					/>
+					<GridBoxComponent 
+						title="Web & Backend SDKs" 
+						hoverDescription="Powerful developer libraries and APIs that seamlessly integrate with Ethereum." 
+					/>
+					<GridBoxComponent 
+						title="Audited Smart Contract Library" 
+						hoverDescription="A standard library of audited smart contracts. Check out our Github." 
+					/>
+					<GridBoxComponent 
+						title="Enhanced Transactions" 
+						hoverDescription="Meta transaction support means users can batch transactions and pay for gas in the token of their choice. And, Sequence Meta transactions work with all existing contracts (without any changes required to your contracts)." 
+						gridRow="2/4"
+					/>
+					<GridBoxComponent 
+						title="Easy Minting, Transfer and Exchange of NFTs and Digital Items" 
+						hoverDescription="Our widely-adopted ERC-1155 smart contracts help you easily create digital collectibles. Plus, enhance your capabilities with our NFT APIs for querying metadata and balances." 
+						gridColumn="4"
+						gridRow="2/4"
+					/>
+					<GridBoxComponent 
+						title="Social / Email Login & Recovery for Wallets" 
+						hoverDescription="Easily sign in via Google, Facebook or other socials. No blockchain knowledge required." 
+					/>
+					<GridBoxComponent 
+						title="Niftyswap (NFT) Market Protocol" 
+						hoverDescription="Offer your users an ecommerce-like market experience for trading ERC-1155 tokens. Users will love instant liquidity with Niftyswap's AMM design! Build your own custom UI's — we've already built the backend for you." 
+						gridColumn="3" 
+						gridRow="2/4"
+					/>
+					<GridBoxComponent 
+						title="Friendly Payments" 
+						hoverDescription="Easy credit card on-ramps, and your users don’t need to own crypto to pay fees." 
+					/>
+				</GridWrapper>
+			</GridContainer>
+		</DeveloperWrapper>
+	</DeveloperContainer>
+)
 
 export default DeveloperSDK;
 
 const GridBoxComponent = ({title, hoverDescription, gridColumn="", gridRow=""}) => {
 	const [description, setDescription] = useState(false);
 	return (
-		<BoxContainer gridColumn={gridColumn} gridRow={gridRow} onMouseEnter={()=>setDescription(true)} onMouseLeave={()=>setDescription(false)}>
+		<BoxContainer 
+			gridColumn={gridColumn} 
+			gridRow={gridRow} 
+			onMouseEnter={()=>setDescription(true)} 
+			onMouseLeave={()=>setDescription(false)}
+		>
 			<h2>{title}</h2>
 			<SpanWrapper description={description}>
 				<p>{hoverDescription}</p>
@@ -70,7 +77,7 @@ const GridBoxComponent = ({title, hoverDescription, gridColumn="", gridRow=""}) 
 	)
 }
 
-
+// CSS Styling
 const DeveloperContainer = styled.div`
 	max-width : 78rem;
 	margin: 0 auto;

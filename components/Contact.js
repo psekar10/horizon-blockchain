@@ -2,8 +2,12 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useForm } from "react-hook-form";
 
+/**
+ * Contact Form component
+ * 
+ */
 const Contact = () => {
-	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const { register, handleSubmit } = useForm();
   const onSubmit = data => console.log(data);
 	return (
 		<div style={{margin: "8rem 0"}}>
@@ -144,5 +148,4 @@ const FootNote = styled.p`
 	color: #999;
 	font-size: 15px;
 	margin-top: 48px;
-
 `;
